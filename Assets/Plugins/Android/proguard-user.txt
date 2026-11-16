@@ -1,0 +1,6 @@
+-keep class com.facebook.** { *; } -keepattributes Signature
+-keep class com.unity.** { *;} -keepattributes Signature
+-keep class com.applovin.** { *;} -keepattributes Signature
+-keep class com.android.billingclient.** {*; } -keepattributes Signature
+-keep class com.google.android.play.** { *; } -keepattributes Signature
+-keep class com.lofelt.** { *; } -keepattributes Signature
