@@ -52,7 +52,7 @@ MonoBehaviour:
   NativeWhiteListRegex:
   - com.bytedance.starksdk
   - _Backup~
-  _appId: tt1ede686380a0448002
+  _appId: tt044e72f39a33932c07
   version: 
   autoVersion: 0
   _webglPackagePath: "E:\\unitystudy\\project\\Unity2021_\u5272\u8349_\u98DE\u5200\u53A8\u795E\\tt-minigame\\tt-minigame"

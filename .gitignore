@@ -51,3 +51,6 @@ desktop.ini
 # ── 崩溃日志 ──
 sysinfo.txt
 crashlytics-build.properties
+
+# ── OPS 混淆器运行日志（每次打包都会变，不进仓库） ──
+/Assets/OPS/Obfuscator/Log/

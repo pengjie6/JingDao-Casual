@@ -64,7 +64,7 @@ public class AdConfirm : MonoBehaviour
         btnConfirm?.onClick.AddListener(this.OnConfirm);
     }
 
-    /// <summary>默认用途：看完广告给玩家加一次复活机会。</summary>
+    /// <summary>默认用途：看完广告给玩家加一次复活机会，并弹提示。</summary>
     private static void GrantReviveChance()
     {
         if (GameplayManager.Instance == null)
@@ -73,7 +73,17 @@ public class AdConfirm : MonoBehaviour
             return;
         }
 
-        GameplayManager.Instance.AddReviveChance();
+        if (GameplayManager.Instance.AddReviveChance())
+        {
+            // 领取成功：提示玩家这次看广告的收益
+            UiToast.Show("复活次数 +1");
+            Debug.Log($"[广告] 领取成功，当前复活次数 {GameplayManager.Instance.ReviveChances}");
+        }
+        else
+        {
+            // 已经攒满上限，广告看完了也不能白看，得让玩家知道为什么没加
+            UiToast.Show($"复活次数已满（上限 {GameplayManager.MaxReviveChances} 次）");
+        }
     }
 
 

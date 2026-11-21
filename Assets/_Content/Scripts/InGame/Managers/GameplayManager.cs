@@ -208,18 +208,20 @@ namespace _Content.InGame.Managers
 		/// <summary>
 		/// 看激励广告成功后调用：库存复活次数 +1（上限 MaxReviveChances）。
 		/// </summary>
-		public void AddReviveChance()
+		/// <returns>true = 真的加了 1 次；false = 已经到上限，没加</returns>
+		public bool AddReviveChance()
 		{
 			if (_reviveChances >= MaxReviveChances)
 			{
 				Debug.Log($"[复活] 复活次数已满（{MaxReviveChances} 次），不再增加");
-				return;
+				return false;
 			}
 
 			_reviveChances++;
 			PlayerPrefs.SetInt(ReviveChancesKey, _reviveChances);
 			PlayerPrefs.Save();
 			Debug.Log($"[复活] 看广告获得 1 次复活机会，当前库存 {_reviveChances} 次");
+			return true;
 		}
 
 		/// <summary>
